@@ -21,7 +21,7 @@ const sortByLastElement = (array) => {
 const server = () => {
 
     const app = e();
-    const port = 3000;
+    const port = 3010;
 
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: false }))
