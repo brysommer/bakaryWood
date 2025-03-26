@@ -1,6 +1,5 @@
 import bot from "./bot.js";
 import values from "./values.js";
-import { findContentByCourse } from "./models/content.js";
 
 const returnVideoId = () => {
 

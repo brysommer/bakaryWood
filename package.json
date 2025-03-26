@@ -17,7 +17,7 @@
     "luxon": "^3.4.4",
     "node-telegram-bot-api": "^0.66.0",
     "overshom-wayforpay": "^1.1.0",
-    "sequelize": "^6.37.3",
-    "sqlite3": "^5.1.7"
+    "pg": "^8.14.1",
+    "sequelize": "^6.37.3"
   }
 }

@@ -14,22 +14,30 @@ Content.init({
         type: DataTypes.STRING,
         allowNull: true
     },
-    course: {
+    price: {
         type: DataTypes.STRING,
         allowNull: true
     },
-    serial: {
+    category_id: {
         type: DataTypes.STRING,
         allowNull: true
     },
-    type: {
+    media1: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    media2: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    media3: {
         type: DataTypes.STRING,
         allowNull: true
     }
 
 }, {
     freezeTableName: false,
-    timestamps: true,
+    timestamps: false,
     modelName: 'content',
     sequelize
 });
@@ -49,9 +57,11 @@ const createContent = async (contentData) => {
 
 
 
-const findContentByCourse = async (course) => {
-    const res = await Content.findAll({ where: { course } });
-    if (res.length > 0) return res.map(el => el.dataValues);
+
+
+const findContentByID = async (id) => {
+    const res = await Content.findOne({ where: { id } });
+    if (res) return res.dataValues;
     return;
 };
 
@@ -59,5 +69,5 @@ const findContentByCourse = async (course) => {
 export {
     Content,
     createContent,
-    findContentByCourse,
+    findContentByID,
 };   

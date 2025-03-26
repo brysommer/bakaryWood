@@ -4,7 +4,7 @@ import * as crypto from 'crypto';
 import { createNewPurchaseByChatId } from "./models/purchases.js";
 import bodyParser from "body-parser";
 import bot from "./bot.js";
-import { findContentByCourse } from "./models/content.js";
+import { findContentByID } from "./models/content.js";
 
 const sortByLastElement = (array) => {
     return array.sort((a, b) => {
@@ -78,7 +78,7 @@ const server = () => {
                 console.log(chatId, courseName);
                 await createNewPurchaseByChatId(chatId, courseName);
 
-                const content = await findContentByCourse(courseName);
+                const content = await findContentByID(courseName);
                 console.log(content);
 
                 for (const el of content) {
